@@ -1,0 +1,45 @@
+{% extends 'AtoK_app/index.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body
+      {
+      background-image:url("{% static  'images/img22.jpeg' %}");
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      }
+      </style>
+  </head>
+  
+<body> 
+    <h1 style="color:blue;"><center> Chronic Kidney Disease(CKD) With Water Fluoride</center></h1> 
+
+        <h5>The most common form of kidney disease is chronic kidney disease. Chronic kidney disease is a long-term condition that doesn’t improve over time. </h5><br>
+      <h2 style="color:#24171e;">Causes:</h2>
+      <div class="col-md-5 card mx-1 shadow-lg border rounded">
+      <ul>
+      <div class="text-dark">
+      <li>Diabets</li>
+      <li>High blood pressure (hypertension)</li>
+      <li>metabolic syndrome(excess abdominal fat)</li>
+      <li>Glomerulonephritis (inflammation of glomeruli)</li>
+      <li>interstitial nephritis (inflammation of interstitium)</li>
+      <li>Polycystic kidney disease (cysts in kidneys)</li> 
+      <li>Vesicoureteral reflux (urine to back up into kidneys)</li>
+      <li>Recurrent kidney infection (pyelonephritis)</li>
+      <li>Chronic urinary obstruction(enlarged prostate,kidney stones,cancers)</li>    
+      <li>Standard rate of fluoride of drinking water is greater than 1 ppm.</li> 
+    </div>
+    </ul>
+  </div>
+    
+    {% endblock %}
+  </body>
+  </html>

@@ -1,0 +1,82 @@
+
+{% extends 'AtoK_app/index.html' %}
+{% block title %} ES_ChatBot {% endblock %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chatbot.css' %}"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+    <div style="color:black;" class="container"> <br><br>
+        <h4><span class="bg-secondary text-light text-center p-3 mx-5 border rounded">Expert System ChatBot to Help You</span></h4>        
+    <br>
+    </div>
+    <div class="col-md-6 card mx-5 shadow-lg border rounded">
+        <img src="{% static  'images/img3.jpg' %}" height="200px width=30px">
+        <strong><h4><span class="text-dark">A simple chatbot to respond any queries regarding Kidney diseases.This advisory record or information sheet should help the patient to follow himself in regard of food,intake of medicines,health consciousness maintenance etc.
+    </div>
+            
+
+
+    <!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">AtoK_ChatBot!
+            <i id="chat-icon" style="color: rgb(242, 244, 250);" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'Script/chat.js' %}">  </script>
+<script src="{% static 'Script/response.js' %}">  </script>
+
+
+</html>
+{% endblock %}

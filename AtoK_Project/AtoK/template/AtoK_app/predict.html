@@ -1,0 +1,96 @@
+{% extends 'AtoK_app/index.html' %}
+{% block title %} Predict {% endblock %}
+{% block content %}
+{% load static %}
+ <html>
+     <head>
+         <style>
+        body
+        {
+        background-image:url("{% static  'images/drawing7.jpg' %}");
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 50% 80%;
+        }
+        p
+        {
+            color:#ff00aa
+           
+        }
+    </style>
+    </head>
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row mx-4" >
+            <div class="col-md-5 card mx-3 shadow-lg border rounded">
+            <h3 class="bg-info text-light text-center p-2 border rounded my-3">CHECK YOUR HEALTH</h3>
+                <div class="card-body">
+                <table align="center">
+                    <form  action="{% url 'res' %}">
+                        {% csrf_token %}
+                        <tr>
+                            <th><span style="color:red"> Specify Gravity: </span></th>
+                            <th><input type="text" name="sg" placeholder="1.000 to 1.025" class="form-control my-2" required></th>
+                        </tr>
+                        <tr>
+                            <th><span style="color:red"> Hyper Tension:   </span></th>
+                             <th><input type="text" name="htn" placeholder="Yes = 1, No=0" class="form-control my-2" required></th>
+                         </tr>
+                         <tr>
+                            <th><span style="color:red">   Hemoglobin:     </span></th>
+                             <th><input type="text" name="hemo" placeholder="in gms" class="form-control my-2"  required></th>
+                         </tr>
+    
+                         <tr>
+                            <th><span style="color:red">   Diabetes Mellitus:     </span></th>
+                             <th><input type="text" name="dm" placeholder="Yes = 1, No=0" class="form-control my-2"  required></th>
+                         </tr>
+    
+                         <tr>
+                            <th><span style="color:red">  Albumin:     </span></th>
+                             <th><input type="text" name="al" placeholder="(0,1,2,3,4,5)" class="form-control my-2"  required></th>
+                         </tr>
+    
+                         <tr>
+                            <th><span style="color:red">   Appetite:    </span></th>
+                             <th><input type="text" name="appet" placeholder="Good = 1, Poor = 0" class="form-control my-2"  required></th>
+                         </tr>
+    
+                         <tr>
+                            <th><span style="color:red">   Red Blood Cell Count:    </span></th>
+                             <th><input type="text" name="rc" placeholder="in Millions/cmm" class="form-control my-2"  required></th>
+                         </tr>
+
+                         <tr>
+                            <th><span style="color:red">  Pus Cell:    </span></th>
+                             <th><input type="text"  name="pc" placeholder="Normal=0, Abnormal=1" class="form-control my-2"  required></th>
+                         </tr>
+
+                         <tr>
+                            <th><span style="color:red">  Fluoride in drinking water:    </span></th>
+                             <th><input type="text"  name="pc" placeholder="0.5 to 1 ppm" class="form-control my-2"  required></th>
+                         </tr>
+
+                       <tr>
+                        <div class="row mx-5">
+                            <th><br><input type="reset" value="Reset" class="btn btn-outline-danger col-sm mx--1"></th>
+                          <th><br><input type="submit" value="Predict" class="btn btn-outline-success col-sm mx-1"></th>
+                        </div>
+                       </tr>
+                    </form>
+      
+                </table>
+                <br>
+            </div>
+        </div>        
+    </div>
+<p class='footer-description' align="center">©2022  Mothukuri Rajeshkumar</p>
+
+</body>
+
+</html>
+
+{% endblock %}

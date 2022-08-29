@@ -1,0 +1,130 @@
+{% extends 'AtoK_app/index.html' %}
+{% block title %} Predict {% endblock %}
+{% block content %}
+{% load static %}
+<html>
+    <head>
+        <style>
+            body{
+            
+            text-align: left;
+        }
+        p{
+            color:#ff00aa
+        
+        }
+
+            .fixed {
+            
+            position: absolute;
+            
+            right: 0px;
+            
+            top: 165px;
+            
+            width: 580px;
+            height:300px
+            }
+            table
+        {
+    
+        position: absolute;
+        top: 3px;
+        right: 16px;
+        font-size: 18px;
+        width: 50 px;
+        height: 50 px;
+        }
+        img{
+        /* Center and scale the image nicely */
+        position: absolute;
+        top: 90px;
+        right: 16px;
+        font-size: 18px;
+        width: 500;
+        height: 500; 
+        }
+
+            
+            </style>
+        
+    </head>
+   
+<body>
+    <div style="color:black;" class="container"> <br><br>
+            <h4><span class="bg-primary text-light text-center p-3 mx-5 border rounded">Chronic Kidney Disease Prediction</span></h4>        
+        <br>
+        <!-- Result -->
+	
+			{% if prediction == '[1]' %}
+            <div class="col-md-6 card mx-0 shadow-lg border rounded">
+    
+			<strong><h4><span class="text-danger">Oops! 🙁<br><br>You have CHRONIC KIDNEY DISEASE with WATER FLOURIDE.<br><br>Please Consult Doctor ASAP.<br><br> The advice of a medical professional can help lead you to the best possible recovery.<br><br>Click on Expert System in regard of Food, intake of Medicines, Health consciousness maintenance etc.</span></h4></strong>
+                <br>
+            </div> 
+            
+            <div class="fixed">
+                
+                <div class="col-md-10 card mx-0 shadow-lg border rounded">
+    
+                    <div class="card border-info mb-3" style="max-width: 30rem;">
+                        <b><div class="card-header">How can I improve my kidney life? </div></b>
+                        <div class="card-body">
+                          <h5 class="card-title">Suggestions to Improve Kidney Life Time</h5>
+                         <marquee direction="up" bgcolor="pink" onMouseOver="this.stop()" onMouseOut="this.start()"> <ol >
+                            <b><li>Make healthy food choices.</li>
+                            <li>Make physical activity part of your routine.</li>
+                            <li>Aim for a healthy weight.</li>
+                            <li>Get enough sleep.</li>
+                            <li>Stop smoking.</li>
+                            <li>Limit alcohol intake link.</li>
+                            <li>Explore stress-reducing activities.</li>
+                            <li>Manage diabetes, high blood pressure, and heart disease.</li>
+                            <li>These habits can  help to prevent kidney disease.</li></b>
+                           
+                        </ol>
+                        </marquee>
+                        </div>
+                      </div>
+
+                      </div>
+
+
+
+            </div><br>
+                <div >
+                    <div class="text-center">
+                <a class="btn btn-success"  href="{%url 'es' %}">Expert System</a>
+            </div>
+        
+			{% elif prediction == '[0]' %}
+            <div class="col-md-6 card mx-10 shadow-lg border rounded">
+				
+                <h4><span class='text-danger'>🎉 Congratulation! 🎉<br><br>You DON'T have Chronic Kidney Disease.<br><br>Always take Heathly Food.</span></h4>
+              
+            </div>
+          
+                <table>
+                    <td>
+                <img class="gif1" src="{% static 'images/healthy_kidney.jpg' %}" alt="Not Displayed"><br><br><br>
+                    </td>
+            </table><br>
+                <div class="text-center">
+                <a class="btn btn-danger" href="{%url 'hm' %}">Back to Home</a>
+            </div>
+        
+			{% endif %}
+		</div>
+    </form>
+    <div>
+            <br><br> <br><br><br><br><br><br><br><br>
+
+            <p class='footer-description' align="center">2022 © Mothukuri Rajeshkumar</p>
+
+    </div>
+    </body>
+        
+</html>
+
+
+{% endblock %}
